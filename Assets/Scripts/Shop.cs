@@ -1,15 +1,24 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Shop : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    BuildManager buildManager;
+
+    void Start()
+    {
+        buildManager = BuildManager.instance;
+    }
+
+	public void PurchaseStandardTurret ()
+    {
+        Debug.Log("Standard Turret Selected");
+        buildManager.SetTurretToBuild(buildManager.standardTurretPrefab);
+    }
+
+    public void PurchaseAnotherTurret()
+    {
+        Debug.Log("Another Turret Selected");
+        buildManager.SetTurretToBuild(buildManager.anotherTurretPrefab);
+    }
+
 }
